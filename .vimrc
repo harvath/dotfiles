@@ -10,7 +10,8 @@ set exrc
 set secure
 
 " set tab to 4 spaces and automate
-set shiftwidth=4 | set tabstop=4 | set softtabstop=4 | set expandtab 
+set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+nnoremap <silent> <C-j> :let &ts=(&ts*2 > 8 ? 2 : &ts*2)<cr>:let &sw=&ts<cr>:let &sts=&ts<cr>:echo "tabstop:" . &ts<cr>
 "set cindent
 
 " set numbers and colors
@@ -26,6 +27,10 @@ inoremap jj <Esc>
 
 " backspace
 set backspace=2
+
+" highlight long lines
+highlight OverLength ctermfg=red
+match OverLength /\%81v.\+/
 
 " other little configs
 " move to start/end of line
