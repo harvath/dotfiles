@@ -9,8 +9,8 @@ set nocompatible | filetype indent plugin on | syn on
 set exrc
 set secure
 
-" set tab to 4 spaces and automate
-set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+" set tab to 2 spaces and automate
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 nnoremap <silent> <C-j> :let &ts=(&ts*2 > 8 ? 2 : &ts*2)<cr>:let &sw=&ts<cr>:let &sts=&ts<cr>:echo "tabstop:" . &ts<cr>
 "set cindent
 
@@ -28,9 +28,12 @@ inoremap jj <Esc>
 " backspace
 set backspace=2
 
+" set tags file
+set tags=./.tags;,.tags;,./tags;,tags;
+
 " highlight long lines
-highlight OverLength ctermfg=red
-match OverLength /\%81v.\+/
+command SeeLong highlight OverLength ctermfg=red | match OverLength /\%81v.\+/
+command SeeLongOff highlight OverLength NONE
 
 " other little configs
 " move to start/end of line
@@ -40,6 +43,12 @@ nnoremap <C-a> 0
 imap <C-a> <C-O>0
 imap <C-b> <C-O>h
 imap <C-f> <C-O>l
+
+" clear line
+nmap <C-d> cc<Esc>
+
+" *MAC ONLY* copy selected text to clipboard
+map <C-c> y:new<CR>P:w !pbcopy<CR><CR>:q!<CR>
 
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
