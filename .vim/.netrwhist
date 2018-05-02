@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/harvath/Projects/stamps/config/environments'
-let g:netrw_dirhist_2='/Users/harvath/Projects/stamps/config/deploy'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/JP21650/proj/Subsystem-Cocoapods/lib/saori/subsystems/cocoapods/sandbox'
+let g:netrw_dirhist_2='/Users/JP21650/proj/Core/lib/saori-core/settings/settings'
+let g:netrw_dirhist_3='/Users/JP21650/proj/Core/lib/saori-core/settings/settings/dsl'
