@@ -2,9 +2,12 @@
 execute pathogen#infect()
 Helptags
 
+" load fzf downloaded with brew and map it to Ctrl-P
+set rtp+=/usr/local/opt/fzf
+nnoremap <C-p> :FZF<CR>
+
 " turn off vi-conpat mode, enable indent & syntax
 set nocompatible | filetype indent plugin on | syn on
-
 " read custom vimrc files in directory
 set exrc
 set secure
@@ -19,10 +22,18 @@ set nu
 set background=dark
 colorscheme badwolf
 
+" Only ignore case when we type lower case when searching
+set ignorecase
+set smartcase
+
+" automatically change current dir
+" set autochdir
+
 " enable mouse control
 set mouse=a
+set ttymouse=xterm2
 
-" map jj to Esc
+" map jj to Esc 
 inoremap jj <Esc>
 
 " backspace
@@ -34,6 +45,11 @@ set tags=./.tags;,.tags;,./tags;,tags;
 " highlight long lines
 command SeeLong highlight OverLength ctermfg=red | match OverLength /\%81v.\+/
 command SeeLongOff highlight OverLength NONE
+
+" toggle paste with Ctrl-P (overrides word completion)
+" nnoremap <C-p> :set invpaste paste?<CR>
+" set pastetoggle=<C-p>
+" set showmode
 
 " other little configs
 " move to start/end of line
@@ -48,7 +64,15 @@ imap <C-f> <C-O>l
 nmap <C-d> cc<Esc>
 
 " *MAC ONLY* copy selected text to clipboard
-map <C-c> y:new<CR>P:w !pbcopy<CR><CR>:q!<CR>
+" TODO: doesn't work for inline-copy
+map <C-c> y:new<CR>pkdd:w !pbcopy<CR><CR>:q!<CR>
 
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
+
+" for vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
+" for Rg - automatically set root to dir with .git
+let g:rg_derive_root = 1
+
