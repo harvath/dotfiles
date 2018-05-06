@@ -1,71 +1,87 @@
+" -- RTP
+
 " pathogen
 execute pathogen#infect()
 Helptags
 
-" load fzf downloaded with brew and map it to Ctrl-P
+" *mac only* load fzf downloaded with brew and map it to ctrl-p
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :FZF<CR>
 
+" -- Basic Configurations
+
+" map jj to Esc (the most important trick of all)
+inoremap jj <Esc>
+
 " turn off vi-conpat mode, enable indent & syntax
 set nocompatible | filetype indent plugin on | syn on
-" read custom vimrc files in directory
-set exrc
-set secure
+
+" read custom vimrc files in directory (securely)
+set exrc secure
 
 " set tab to 2 spaces and automate
 set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+" change tabs settings with ctrl+j
 nnoremap <silent> <C-j> :let &ts=(&ts*2 > 8 ? 2 : &ts*2)<cr>:let &sw=&ts<cr>:let &sts=&ts<cr>:echo "tabstop:" . &ts<cr>
 "set cindent
 
-" set numbers and colors
-set nu
+" always show status line
+set laststatus=2
+
+" show tabs and trailing whitespaces
+set list listchars=tab:>-,trail:·
+
+" show line numbers
+set number 
+
+" color  
 set background=dark
 colorscheme badwolf
 
 " Only ignore case when we type lower case when searching
-set ignorecase
-set smartcase
-
-" automatically change current dir
-" set autochdir
+set ignorecase smartcase
 
 " enable mouse control
-set mouse=a
-set ttymouse=xterm2
+set mouse=a ttymouse=xterm2
 
-" map jj to Esc 
-inoremap jj <Esc>
-
-" backspace
-set backspace=2
+" allow backspace to work like in most programs
+set backspace=indent,eol,start
 
 " set tags file
 set tags=./.tags;,.tags;,./tags;,tags;
 
-" highlight long lines
-command SeeLong highlight OverLength ctermfg=red | match OverLength /\%81v.\+/
-command SeeLongOff highlight OverLength NONE
+" -- Highlights
 
-" toggle paste with Ctrl-P (overrides word completion)
-" nnoremap <C-p> :set invpaste paste?<CR>
-" set pastetoggle=<C-p>
-" set showmode
+" highlight long lines (>80) 
+highlight overlength ctermfg=red guifg=red 
+match overlength /\%81v.\+/
 
-" other little configs
-" move to start/end of line
+" highlight double-byte spaces
+highlight dbspace ctermbg=red guibg=red 
+2match dbspace /　/
+
+" -- Other custom commands
+
+" move around like in bash
 nmap <C-e> $
-inoremap <C-e> <C-O>$
-nnoremap <C-a> 0
+nmap <C-a> 0
+imap <C-e> <C-O>$
 imap <C-a> <C-O>0
 imap <C-b> <C-O>h
 imap <C-f> <C-O>l
 
-" clear line
+" clear line with Ctrl-d
 nmap <C-d> cc<Esc>
 
 " *MAC ONLY* copy selected text to clipboard
 " TODO: doesn't work for inline-copy
 map <C-c> y:new<CR>pkdd:w !pbcopy<CR><CR>:q!<CR>
+
+" toggle paste with Ctrl-P (overrides word completion)
+" nnoremap <C-p> :set invpaste paste?<CR>
+" set pastetoggle=<C-p>
+
+" -- Plugins
 
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
