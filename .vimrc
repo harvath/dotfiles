@@ -1,5 +1,4 @@
-" -- RTP
-
+" ========== RTP ==========
 " pathogen
 execute pathogen#infect()
 Helptags
@@ -8,8 +7,7 @@ Helptags
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :FZF<CR>
 
-" -- Basic Configurations
-
+" ========== Basic Configurations ==========
 " map jj to Esc (the most important trick of all)
 inoremap jj <Esc>
 
@@ -23,7 +21,6 @@ set exrc secure
 set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 " change tabs settings with ctrl+j
 nnoremap <silent> <C-j> :let &ts=(&ts*2 > 8 ? 2 : &ts*2)<cr>:let &sw=&ts<cr>:let &sts=&ts<cr>:echo "tabstop:" . &ts<cr>
-"set cindent
 
 " always show status line
 set laststatus=2
@@ -50,8 +47,7 @@ set backspace=indent,eol,start
 " set tags file
 set tags=./.tags;,.tags;,./tags;,tags;
 
-" -- Highlights
-
+" ========== Highlights ==========
 " highlight long lines (>80) 
 highlight overlength ctermfg=red guifg=red 
 match overlength /\%81v.\+/
@@ -60,8 +56,7 @@ match overlength /\%81v.\+/
 highlight dbspace ctermbg=red guibg=red 
 2match dbspace /　/
 
-" -- Other custom commands
-
+" ========== Other custom commands ==========
 " move around like in bash
 nmap <C-e> $
 nmap <C-a> 0
@@ -81,8 +76,7 @@ map <C-c> y:new<CR>pkdd:w !pbcopy<CR><CR>:q!<CR>
 " nnoremap <C-p> :set invpaste paste?<CR>
 " set pastetoggle=<C-p>
 
-" -- Plugins
-
+" ========== Plugin-specific ==========
 " NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 
