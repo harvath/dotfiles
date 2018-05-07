@@ -85,4 +85,4 @@ let g:vim_markdown_folding_disabled = 1
 
 " for Rg - automatically set root to dir with .git
 let g:rg_derive_root = 1
-
+let g:rg_command = 'rg --vimgrep -g "!tags"'
