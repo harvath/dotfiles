@@ -1,2 +1,5 @@
 # tmux_resurrect logs
 .tmux/resurrect/*
+
+# swap files
+*.swp

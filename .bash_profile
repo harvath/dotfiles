@@ -39,5 +39,16 @@ source ~/.git-completion.bash
 [ -f /usr/local/opt/fzf/.fzf.bash ] && source /usr/local/opt/fzf/.fzf.bash
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,vendor}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-# Ctrl-v to open file in vim
-alias fv='vim $(fzf)'
+
+# fv - open file in vim
+fv() {
+  local file
+  file=$(fzf +m -q "$1") && vim "$file"
+}
+
+# cdf - cd into the directory of the selected file
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
