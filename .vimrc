@@ -6,6 +6,7 @@ Helptags
 " *mac only* load fzf downloaded with brew and map it to ctrl-p
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :FZF<CR>
+command B Buffer
 
 " ========== Basic Configurations ==========
 " map jj to Esc (the most important trick of all)
