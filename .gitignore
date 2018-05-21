@@ -1,5 +1,8 @@
 # tmux_resurrect logs
 .tmux/resurrect/*
 
+# vim files
+.vim/.netrwhist
+
 # swap files
 *.swp
