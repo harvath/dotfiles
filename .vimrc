@@ -20,8 +20,8 @@ set exrc secure
 
 " set tab to 2 spaces and automate
 set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-" change tabs settings with ctrl+j
-nnoremap <silent> <C-j> :let &ts=(&ts*2 > 8 ? 2 : &ts*2)<cr>:let &sw=&ts<cr>:let &sts=&ts<cr>:echo "tabstop:" . &ts<cr>
+" " change tabs settings with ctrl+j
+" nnoremap <silent> <C-j> :let &ts=(&ts*2 > 8 ? 2 : &ts*2)<cr>:let &sw=&ts<cr>:let &sts=&ts<cr>:echo "tabstop:" . &ts<cr>
 
 " always show status line
 set laststatus=2
@@ -73,9 +73,9 @@ nmap <C-d> cc<Esc>
 " TODO: doesn't work for inline-copy
 map <C-c> y:new<CR>pkdd:w !pbcopy<CR><CR>:q!<CR>
 
-" toggle paste with Ctrl-P (overrides word completion)
-" nnoremap <C-p> :set invpaste paste?<CR>
-" set pastetoggle=<C-p>
+" toggle paste with Ctrl-j
+nnoremap <C-j> :set invpaste paste?<CR>
+set pastetoggle=<C-j>
 
 " ========== Plugin-specific ==========
 " NERDTree
