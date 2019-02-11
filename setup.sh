@@ -6,5 +6,7 @@
 brew install fzf && \
 cargo install ripgrep
 
-# set symlinks here?
-
+# set symlinks
+for filename in ~/dotfiles/files/*; do
+  ln -s "~/dotfiles/files/$filename" "~/$filename";
+done
