@@ -4,7 +4,7 @@
 # install homebrew
 
 brew install fzf && \
-cargo install rg
+cargo install ripgrep
 
 # set symlinks here?
 
