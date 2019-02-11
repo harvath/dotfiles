@@ -2,13 +2,13 @@
 export PS1="\[\e[0;32m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
 
 # cds
-alias proj='cd ~/proj'
-alias work='cd ~/proj/Subsystem-Cocoapods'
-alias rust='cd ~/proj/rust_tests'
+alias work='cd ~/'
 
 # git
 alias gs='git status'
-alias gc='git add . && git commit'
+alias gac='git add . && git commit'
+alias ga='git add .'
+alias gc='git commit'
 alias gp='git push -u'
 
 # rbenv
@@ -21,7 +21,6 @@ alias ta='tmux attach -t'
 alias tn='tmux new -s'
 
 # other useful aliases
-alias gao='python2 ~/proj/gao/gao.py'
 alias rubytags='ctags -R --languages=ruby --exclude=.git --exclude=vendor .'
 alias be='bundle exec'
 
