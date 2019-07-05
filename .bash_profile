@@ -4,6 +4,7 @@ export PS1="\[\e[0;32m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
 # cds
 alias work='cd ~/'
 
+
 # git
 alias gs='git status'
 alias gac='git add . && git commit'
@@ -51,3 +52,12 @@ cdf () {
    local dir
    file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
 }
+
+# mkcd - make directory and cd into it
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
