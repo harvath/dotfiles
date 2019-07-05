@@ -2,6 +2,7 @@
 
 # install cargo
 # install homebrew
+# install tmux, fd, 
 
 brew install fzf && \
 cargo install ripgrep
@@ -10,3 +11,4 @@ cargo install ripgrep
 for filename in ~/dotfiles/files/*; do
   ln -s "~/dotfiles/files/$filename" "~/$filename";
 done
+
