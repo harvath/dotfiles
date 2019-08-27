@@ -2,8 +2,10 @@
 export PS1="\[\e[0;32m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
 
 # cds
-alias work='cd ~/'
-
+alias work='cd ~/projects/youclass'
+alias proj='cd ~/projects'
+alias notes='cd ~/notes'
+alias dev='cd ~/dev'
 
 # git
 alias gs='git status'
