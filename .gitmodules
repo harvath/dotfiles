@@ -1,0 +1,18 @@
+[submodule "files/.vim/bundle/nerdtree"]
+	path = files/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "files/.vim/bundle/fzf.vim"]
+	path = files/.vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "files/.vim/bundle/rust.vim"]
+	path = files/.vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "files/.vim/bundle/vim-markdown"]
+	path = files/.vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule "files/.vim/bundle/vim-ruby"]
+	path = files/.vim/bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby
+[submodule "files/.vim/bundle/vim-ripgrep"]
+	path = files/.vim/bundle/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep
