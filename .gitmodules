@@ -16,3 +16,6 @@
 [submodule "files/.vim/bundle/vim-ripgrep"]
 	path = files/.vim/bundle/vim-ripgrep
 	url = https://github.com/jremmen/vim-ripgrep
+[submodule "files/.vim/bundle/nginx.vim"]
+	path = files/.vim/bundle/nginx.vim
+	url = https://github.com/chr4/nginx.vim

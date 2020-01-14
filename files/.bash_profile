@@ -1,8 +1,9 @@
+#TODO: separate .bashrc and .bash_profile for more flexible use
 # prompt - green, prints previous exit status and current dir
 export PS1="\[\e[0;32m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
 
 # cds
-alias work='cd ~/projects/youclass'
+alias work='cd ~/projects/stamps'
 alias proj='cd ~/projects'
 alias notes='cd ~/notes'
 alias dev='cd ~/dev'
@@ -63,3 +64,11 @@ mkcd () {
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+# use mysql5.6
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+# export path for nodebrew
+export PATH=~/.nodebrew/current/bin:$PATH
+
+# export path for stack
+export PATH=~/.local/bin:$PATH

@@ -71,7 +71,7 @@ nmap <C-d> cc<Esc>
 
 " *MAC ONLY* copy selected text to clipboard
 " TODO: doesn't work for inline-copy
-map <C-c> y:new<CR>pkdd:w !pbcopy<CR><CR>:q!<CR>
+map <C-c> y:new<CR>p:w !pbcopy<CR><CR>:q!<CR>
 
 " toggle paste with Ctrl-j
 nnoremap <C-j> :set invpaste paste?<CR>
