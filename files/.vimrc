@@ -29,12 +29,12 @@ set laststatus=2
 " show tabs and trailing whitespaces
 set list listchars=tab:>-,trail:·
 
-" show line numbers
-set number 
+" color
+set termguicolors
+colorscheme nord " badwolf, sorcerer
 
-" color  
-set background=dark
-colorscheme badwolf
+" show line numbers
+set number
 
 " Only ignore case when we type lower case when searching
 set ignorecase smartcase
@@ -49,12 +49,12 @@ set backspace=indent,eol,start
 set tags=./.tags;,.tags;,./tags;,tags;
 
 " ========== Highlights ==========
-" highlight long lines (>80) 
-highlight overlength ctermfg=red guifg=red 
+" highlight long lines (>80)
+highlight overlength ctermfg=red guifg=red
 match overlength /\%81v.\+/
 
 " highlight double-byte spaces
-highlight dbspace ctermbg=red guibg=red 
+highlight dbspace ctermbg=red guibg=red
 2match dbspace /　/
 
 " ========== Other custom commands ==========
@@ -65,6 +65,8 @@ imap <C-e> <C-O>$
 imap <C-a> <C-O>0
 imap <C-b> <C-O>h
 imap <C-f> <C-O>l
+imap <C-d> <Del>
+imap <C-h> <BS>
 
 " clear line with Ctrl-d
 nmap <C-d> cc<Esc>
@@ -87,3 +89,11 @@ let g:vim_markdown_folding_disabled = 1
 " for Rg - automatically set root to dir with .git
 let g:rg_derive_root = 1
 let g:rg_command = 'rg --vimgrep -g "!tags"'
+
+" for QFEnter - makes quickfix act like CtrlP
+let g:qfenter_keymap = {}
+let g:qfenter_keymap.vopen = ['<C-v>']
+let g:qfenter_keymap.hopen = ['<C-x>']
+let g:qfenter_keymap.topen = ['<C-t>']
+
+

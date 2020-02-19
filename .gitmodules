@@ -19,3 +19,9 @@
 [submodule "files/.vim/bundle/nginx.vim"]
 	path = files/.vim/bundle/nginx.vim
 	url = https://github.com/chr4/nginx.vim
+[submodule "files/.vim/bundle/QFEnter"]
+	path = files/.vim/bundle/QFEnter
+	url = https://github.com/yssl/QFEnter
+[submodule "files/.vim/bundle/vim-surround"]
+	path = files/.vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround

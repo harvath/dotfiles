@@ -1,12 +1,12 @@
 #TODO: separate .bashrc and .bash_profile for more flexible use
-# prompt - green, prints previous exit status and current dir
-export PS1="\[\e[0;32m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
+# prompt - blue, prints previous exit status and current dir
+export PS1="\[\e[36m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
 
 # cds
 alias work='cd ~/projects/stamps'
+alias study='cd ~/projects/frontend/joes-pizza'
 alias proj='cd ~/projects'
 alias notes='cd ~/notes'
-alias dev='cd ~/dev'
 
 # git
 alias gs='git status'
@@ -27,6 +27,8 @@ alias tn='tmux new -s'
 # other useful aliases
 alias rubytags='ctags -R --languages=ruby --exclude=.git --exclude=vendor .'
 alias be='bundle exec'
+alias pg='ps aux | rg'
+alias ls='ls -G'
 
 # thefuck
 eval $(thefuck --alias)
@@ -35,30 +37,76 @@ eval $(thefuck --alias)
 export PATH="$HOME/.cargo/bin:$PATH"
 alias rrepl="rustup run nightly-2016-08-01 ~/.cargo/bin/rusti"
 
-# Git
+# Git completion
 source ~/.git-completion.bash
 
 # fzf (use rg)
 [ -f /usr/local/opt/fzf/.fzf.bash ] && source /usr/local/opt/fzf/.fzf.bash
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,vendor}/*" 2> /dev/null'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# fv - open file in vim
-fv () {
+# v - open file in vim
+alias v='_fzf_vim'
+_fzf_vim () {
   local file
-  file=$(fzf +m -q "$1") && echo "vim $file" && vim "$file"
+  file=$(fzf +m -q "$1") && history -s "vim $file" && vim "$file"
 }
 
-# cdf - cd into the directory of the selected file
-cdf () {
-   local file
+# vv - open files in ~/.viminfo
+alias vv='_fzf_vim_history'
+_fzf_vim_history () {
+  local files
+  local cmd
+  files=$(grep '^>' ~/.viminfo | cut -c3- |
+    while read line; do
+      [ -f "${line/\~/$HOME}" ] && echo "$line"
+    done | fzf-tmux -d -m -q "$*" -1) && cmd="vim ${files//\~/$HOME}" && history -s "$cmd" && $cmd
+}
+
+# cdd - fuzzy cd
+alias cdd='_fzf_cd'
+_fzf_cd () {
    local dir
-   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+   dir=`fd --type d | fzf` && history -s "cd $dir" && cd "$dir"
 }
 
-# mkcd - make directory and cd into it
-mkcd () {
-  mkdir "$1"
+# rg and open selected line with vim
+alias rgg='_fzf_rg_vim'
+_fzf_rg_vim () {
+  if [ -z "$1" ]; then
+    echo "Usage: rgg PATTERN"
+    return 1
+  fi
+  result=`rg --line-number $1 | fzf`
+  file=`echo "$result" | awk -F ':' '{print $1}'`
+  line=`echo "$result" | awk -F ':' '{print $2}'`
+  if [ -n "$file" ]; then
+    history -s "vim $file +$line"
+    vim $file +$line
+  fi
+}
+
+# fuzzy checkout branch with diff
+alias gco='_fzf_git_co'
+_fzf_git_co () {
+  local branch
+  branch=`git branch -a | tr -d " " | fzf --preview 'git log --color=always {}'`
+  history -s git "checkout $branch" && git checkout "$branch"
+}
+
+# checkout recent branches
+alias b='_fzf_git_recent_branch'
+_fzf_git_recent_branch () {
+  local branch
+  branch=`git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | fzf`
+  history -s git "checkout $branch" && git checkout "$branch"
+}
+
+
+# cdm - make directory and cd into it
+cdm () {
+  mkdir -p "$1"
   cd "$1"
 }
 
@@ -70,5 +118,6 @@ export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 # export path for nodebrew
 export PATH=~/.nodebrew/current/bin:$PATH
 
-# export path for stack
+# export path for stack (Haskell)
 export PATH=~/.local/bin:$PATH
+
