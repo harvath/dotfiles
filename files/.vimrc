@@ -3,7 +3,7 @@
 execute pathogen#infect()
 Helptags
 
-" *mac only* load fzf downloaded with brew and map it to ctrl-p
+" *mac only* load fzf downloaded with brew and map it to ctrl-p. Todo: use environment variable
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :FZF<CR>
 command B Buffer
@@ -96,4 +96,6 @@ let g:qfenter_keymap.vopen = ['<C-v>']
 let g:qfenter_keymap.hopen = ['<C-x>']
 let g:qfenter_keymap.topen = ['<C-t>']
 
+" (Experimental) use WakaTime
+nnoremap <C-k> :WakaTimeToday<CR>
 

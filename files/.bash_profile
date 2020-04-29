@@ -14,6 +14,7 @@ alias gac='git add . && git commit'
 alias ga='git add .'
 alias gc='git commit'
 alias gp='git push -u'
+alias fix='vim +/HEAD `git diff --name-only | uniq`'
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -24,11 +25,14 @@ alias tl='tmux ls'
 alias ta='tmux attach -t'
 alias tn='tmux new -s'
 
+# replace ls with exa
+alias ls='exa'
+
 # other useful aliases
 alias rubytags='ctags -R --languages=ruby --exclude=.git --exclude=vendor .'
 alias be='bundle exec'
 alias pg='ps aux | rg'
-alias ls='ls -G'
+alias migrateboth='bundle exec rails db:migrate && bundle exec rails db:migrate RAILS_ENV=test'
 
 # thefuck
 eval $(thefuck --alias)
@@ -78,7 +82,7 @@ _fzf_rg_vim () {
     echo "Usage: rgg PATTERN"
     return 1
   fi
-  result=`rg --line-number $1 | fzf`
+  result=`rg --line-number "$@" | fzf`
   file=`echo "$result" | awk -F ':' '{print $1}'`
   line=`echo "$result" | awk -F ':' '{print $2}'`
   if [ -n "$file" ]; then
@@ -102,7 +106,6 @@ _fzf_git_recent_branch () {
   branch=`git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | fzf`
   history -s git "checkout $branch" && git checkout "$branch"
 }
-
 
 # cdm - make directory and cd into it
 cdm () {
