@@ -12,3 +12,5 @@ Some configs rely on external apps.
 * ripgrep
 * fzf
 
+#### Others
+* exa
