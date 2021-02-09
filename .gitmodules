@@ -34,3 +34,12 @@
 [submodule "files/.vim/bundle/vim-wakatime"]
 	path = files/.vim/bundle/vim-wakatime
 	url = https://github.com/wakatime/vim-wakatime
+[submodule "files/.vim/bundle/vim-gh-line"]
+	path = files/.vim/bundle/vim-gh-line
+	url = https://github.com/ruanyl/vim-gh-line
+[submodule "files/.vim/bundle/vim-rails"]
+	path = files/.vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails
+[submodule "files/.vim/bundle/vim-terraform"]
+	path = files/.vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform

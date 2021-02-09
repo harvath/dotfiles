@@ -5,3 +5,4 @@
 	email = haravat.16@gmail.com
 [alias]
 	co = checkout
+	cp = cherry-pick

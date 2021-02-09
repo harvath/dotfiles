@@ -7,3 +7,6 @@ https://github.com/vim-ruby/vim-ruby
 https://github.com/jremmen/vim-ripgrep
 https://github.com/yssl/QFEnter
 https://github.com/tpope/vim-surround
+https://github.com/tpope/vim-rails
+https://github.com/hashivim/vim-terraform
+https://github.com/ruanyl/vim-gh-line
