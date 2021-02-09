@@ -96,6 +96,9 @@ let g:qfenter_keymap.vopen = ['<C-v>']
 let g:qfenter_keymap.hopen = ['<C-x>']
 let g:qfenter_keymap.topen = ['<C-t>']
 
+" *MAC ONLY* for gh-lines 
+let g:gh_open_command = 'open '
+
 " (Experimental) use WakaTime
 nnoremap <C-k> :WakaTimeToday<CR>
 
