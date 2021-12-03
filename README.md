@@ -1,5 +1,5 @@
 # dotfiles
-Some of my config files. Not a big fan of over-customization, so I try to make them concise.
+Some of my config files. Not a big fan of over-customization so I try to make them concise.
 
 ## usage
 git clone, git submodules init 
