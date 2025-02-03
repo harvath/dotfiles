@@ -1,45 +1,45 @@
-[submodule "files/.vim/bundle/nerdtree"]
-	path = files/.vim/bundle/nerdtree
+[submodule "vim/dot-vim/bundle/nerdtree"]
+	path = vim/dot-vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "files/.vim/bundle/fzf.vim"]
-	path = files/.vim/bundle/fzf.vim
+[submodule "vim/dot-vim/bundle/fzf.vim"]
+	path = vim/dot-vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule "files/.vim/bundle/rust.vim"]
-	path = files/.vim/bundle/rust.vim
+[submodule "vim/dot-vim/bundle/rust.vim"]
+	path = vim/dot-vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
-[submodule "files/.vim/bundle/vim-markdown"]
-	path = files/.vim/bundle/vim-markdown
+[submodule "vim/dot-vim/bundle/vim-markdown"]
+	path = vim/dot-vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
-[submodule "files/.vim/bundle/vim-ruby"]
-	path = files/.vim/bundle/vim-ruby
+[submodule "vim/dot-vim/bundle/vim-ruby"]
+	path = vim/dot-vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby
-[submodule "files/.vim/bundle/vim-ripgrep"]
-	path = files/.vim/bundle/vim-ripgrep
+[submodule "vim/dot-vim/bundle/vim-ripgrep"]
+	path = vim/dot-vim/bundle/vim-ripgrep
 	url = https://github.com/jremmen/vim-ripgrep
-[submodule "files/.vim/bundle/nginx.vim"]
-	path = files/.vim/bundle/nginx.vim
+[submodule "vim/dot-vim/bundle/nginx.vim"]
+	path = vim/dot-vim/bundle/nginx.vim
 	url = https://github.com/chr4/nginx.vim
-[submodule "files/.vim/bundle/QFEnter"]
-	path = files/.vim/bundle/QFEnter
+[submodule "vim/dot-vim/bundle/QFEnter"]
+	path = vim/dot-vim/bundle/QFEnter
 	url = https://github.com/yssl/QFEnter
-[submodule "files/.vim/bundle/vim-surround"]
-	path = files/.vim/bundle/vim-surround
+[submodule "vim/dot-vim/bundle/vim-surround"]
+	path = vim/dot-vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "files/.vim/bundle/vim-vue"]
-	path = files/.vim/bundle/vim-vue
+[submodule "vim/dot-vim/bundle/vim-vue"]
+	path = vim/dot-vim/bundle/vim-vue
 	url = https://github.com/posva/vim-vue
-[submodule "files/.vim/bundle/vim-textobj-user"]
-	path = files/.vim/bundle/vim-textobj-user
+[submodule "vim/dot-vim/bundle/vim-textobj-user"]
+	path = vim/dot-vim/bundle/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user
-[submodule "files/.vim/bundle/vim-wakatime"]
-	path = files/.vim/bundle/vim-wakatime
+[submodule "vim/dot-vim/bundle/vim-wakatime"]
+	path = vim/dot-vim/bundle/vim-wakatime
 	url = https://github.com/wakatime/vim-wakatime
-[submodule "files/.vim/bundle/vim-gh-line"]
-	path = files/.vim/bundle/vim-gh-line
+[submodule "vim/dot-vim/bundle/vim-gh-line"]
+	path = vim/dot-vim/bundle/vim-gh-line
 	url = https://github.com/ruanyl/vim-gh-line
-[submodule "files/.vim/bundle/vim-rails"]
-	path = files/.vim/bundle/vim-rails
+[submodule "vim/dot-vim/bundle/vim-rails"]
+	path = vim/dot-vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails
-[submodule "files/.vim/bundle/vim-terraform"]
-	path = files/.vim/bundle/vim-terraform
+[submodule "vim/dot-vim/bundle/vim-terraform"]
+	path = vim/dot-vim/bundle/vim-terraform
 	url = https://github.com/hashivim/vim-terraform

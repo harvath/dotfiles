@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-# install cargo
-# install homebrew
-# install tmux, fd, 
+# Stow all dotfiles
+stow --dotfiles bash git nvim vim tmux zsh
 
-brew install fzf && \
-cargo install ripgrep
-
-# set symlinks
-for filename in ~/dotfiles/files/*; do
-  ln -s "~/dotfiles/files/$filename" "~/$filename";
-done
-
+if [[ $? -eq 0 ]]; then
+  echo "Dotfiles installed successfully"
+fi

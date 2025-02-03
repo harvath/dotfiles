@@ -10,7 +10,6 @@ fi
 # cds
 alias work='cd ~/projects/magic-lpo'
 alias proj='cd ~/projects'
-alias notes='cd ~/notes'
 
 # git
 alias gs='git status'
