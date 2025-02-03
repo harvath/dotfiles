@@ -2,9 +2,13 @@
 # prompt - blue, prints previous exit status and current dir
 export PS1="\[\e[36m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
 
+# Use Neovim if installed
+if command -v nvim >/dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
 # cds
-alias work='cd ~/projects/stamps'
-alias study='cd ~/projects/frontend/joes-pizza'
+alias work='cd ~/projects/magic-lpo'
 alias proj='cd ~/projects'
 alias notes='cd ~/notes'
 
@@ -14,6 +18,7 @@ alias gac='git add . && git commit'
 alias ga='git add .'
 alias gc='git commit'
 alias gp='git push -u'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 alias fix='vim +/HEAD `git diff --name-only | uniq`'
 
 # rbenv
@@ -124,3 +129,12 @@ export PATH=~/.nodebrew/current/bin:$PATH
 # export path for stack (Haskell)
 export PATH=~/.local/bin:$PATH
 
+# export TERM to enable 256 colors (should I do it here?)
+export TERM='xterm-256color'
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/andyharvath/google-cloud-sdk/path.bash.inc' ]; then . '/Users/andyharvath/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/andyharvath/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/andyharvath/google-cloud-sdk/completion.bash.inc'; fi

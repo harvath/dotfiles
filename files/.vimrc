@@ -40,7 +40,9 @@ set number
 set ignorecase smartcase
 
 " enable mouse control
-set mouse=a ttymouse=xterm2
+if !has('nvim')
+  set mouse=a ttymouse=xterm2
+endif
 
 " allow backspace to work like in most programs
 set backspace=indent,eol,start
@@ -50,8 +52,8 @@ set tags=./.tags;,.tags;,./tags;,tags;
 
 " ========== Highlights ==========
 " highlight long lines (>80)
-highlight overlength ctermfg=red guifg=red
-match overlength /\%81v.\+/
+" highlight overlength ctermfg=red guifg=red
+" match overlength /\%81v.\+/
 
 " highlight double-byte spaces
 highlight dbspace ctermbg=red guibg=red
