@@ -1,17 +1,11 @@
 # dotfiles
 Some of my config files. Not a big fan of over-customization so I try to make them concise.
 
-## usage
-# make sure GNU Stow is installed (brew install stow)
+### prerequisites
+* make sure GNU Stow is installed before running setup.sh (brew install stow)
+* brew install ripgrep fzf eza
+
+## installation
 git clone, git submodules init 
-then run the setup script
+then run setup.sh
 
-## external applications 
-Some configs rely on external apps.
-
-#### Vim
-* ripgrep
-* fzf
-
-#### Others
-* ls is replaced by eza
