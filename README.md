@@ -14,4 +14,4 @@ Some configs rely on external apps.
 * fzf
 
 #### Others
-* exa
+* ls is replaced by eza

@@ -29,8 +29,8 @@ alias tl='tmux ls'
 alias ta='tmux attach -t'
 alias tn='tmux new -s'
 
-# replace ls with exa
-alias ls='exa'
+# replace ls with eza
+alias ls='eza'
 
 # other useful aliases
 alias rubytags='ctags -R --languages=ruby --exclude=.git --exclude=vendor .'

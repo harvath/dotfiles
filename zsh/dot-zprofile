@@ -9,6 +9,7 @@ fi
 alias work='cd ~/projects/magic-lpo'
 alias proj='cd ~/projects'
 
+# TODO: just use git config for some of these
 # git
 alias gs='git status'
 alias gac='git add . && git commit'
@@ -25,28 +26,22 @@ alias tn='tmux new -s'
 # replace ls with eza
 alias ls='eza'
 
-# other useful aliases
-alias rubytags='ctags -R --languages=ruby --exclude=.git --exclude=vendor .'
-alias be='bundle exec'
-alias de='docker-compose exec app bundle exec'
-
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
-
 # v - open file in vim
 alias v='_fzf_vim'
 _fzf_vim () {
-  vim $(fzf +m -q "$1")
+  local file
+  file=$(fzf +m -q "$1") && vim "$file"
 }
 
 # vv - open files in ~/.viminfo
 alias vv='_fzf_vim_history'
 _fzf_vim_history () {
   local files
+  local cmd
   files=$(grep '^>' ~/.viminfo | cut -c3- |
     while read line; do
       [ -f "${line/\~/$HOME}" ] && echo "$line"
-    done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
+    done | fzf-tmux -d -m -q "$*" -1) && cmd="vim ${files//\~/$HOME}" && $cmd
 }
 
 # cdd - fuzzy cd
@@ -75,7 +70,7 @@ alias gco='_fzf_git_co'
 _fzf_git_co () {
   local branch
   branch=`git branch -a | tr -d " " | fzf --preview 'git log --color=always {}'`
-  git checkout "$branch"
+  [ -n "$branch" ] && git checkout "$branch"
 }
 
 # checkout recent branches
@@ -83,7 +78,7 @@ alias b='_fzf_git_recent_branch'
 _fzf_git_recent_branch () {
   local branch
   branch=`git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ | fzf`
-  git checkout "$branch"
+  [ -n "$branch" ] && git checkout "$branch"
 }
 
 # cdm - make directory and cd into it
@@ -105,3 +100,4 @@ export PATH=~/.local/bin:$PATH
 
 # for homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
