@@ -43,3 +43,6 @@
 [submodule "vim/dot-vim/bundle/vim-terraform"]
 	path = vim/dot-vim/bundle/vim-terraform
 	url = https://github.com/hashivim/vim-terraform
+[submodule "vim/dot-vim/bundle/fzf"]
+	path = vim/dot-vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.git
