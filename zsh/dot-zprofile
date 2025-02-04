@@ -1,4 +1,7 @@
-#TODO: separate .bashrc and .bash_profile for more flexible use
+#TODO: separate .zshrc and .zprofile for more flexible use
+
+# load local file
+[ -f ~/.zprofile.local ] && source ~/.zprofile.local
 
 # Use Neovim if installed
 if command -v nvim >/dev/null 2>&1; then
@@ -6,7 +9,6 @@ if command -v nvim >/dev/null 2>&1; then
 fi
 
 # cds
-alias work='cd ~/projects/magic-lpo'
 alias proj='cd ~/projects'
 
 # TODO: just use git config for some of these

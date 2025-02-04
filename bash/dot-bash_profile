@@ -1,4 +1,8 @@
 #TODO: separate .bashrc and .bash_profile for more flexible use
+
+# load local file
+[ -f ~/.bash_profile.local ] && source ~/.bash_profile.local
+
 # prompt - blue, prints previous exit status and current dir
 export PS1="\[\e[36m\][\$(printf %3d \$?)][\w]$ \[\e[m\]"
 
@@ -8,7 +12,6 @@ if command -v nvim >/dev/null 2>&1; then
 fi
 
 # cds
-alias work='cd ~/projects/magic-lpo'
 alias proj='cd ~/projects'
 
 # git

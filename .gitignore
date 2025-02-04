@@ -1,8 +1,12 @@
 # tmux_resurrect logs
-files/.tmux/resurrect/*
+tmux/dot-tmux/resurrect/*
 
 # vim files
-files/.vim/.netrwhist
+vim/dot-vim/.netrwhist
+
+# local settings
+zsh/dot-zprofile.local
+bash/dot-bash_profile.local
 
 # swap files
 *.swp
