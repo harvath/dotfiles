@@ -46,3 +46,6 @@
 [submodule "vim/dot-vim/bundle/fzf"]
 	path = vim/dot-vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "zsh/dot-zsh/pure"]
+	path = zsh/dot-zsh/pure
+	url = https://github.com/sindresorhus/pure.git
