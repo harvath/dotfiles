@@ -73,9 +73,8 @@ imap <C-h> <BS>
 " clear line with Ctrl-d
 nmap <C-d> cc<Esc>
 
-" *MAC ONLY* copy selected text to clipboard
-" TODO: doesn't work for inline-copy
-map <C-c> y:new<CR>p:w !pbcopy<CR><CR>:q!<CR>
+" copy selected text to clipboard
+map <C-c> "+y
 
 " toggle paste with Ctrl-j
 nnoremap <C-j> :set invpaste paste?<CR>
