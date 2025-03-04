@@ -100,3 +100,5 @@ let g:qfenter_keymap.topen = ['<C-t>']
 " *MAC ONLY* for gh-lines 
 let g:gh_open_command = 'open '
 
+" Some TypeScript files freeze vim
+set re=0
