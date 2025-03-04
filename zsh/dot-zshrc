@@ -13,3 +13,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Added by Windsurf
 export PATH="/Users/harvath/.codeium/windsurf/bin:$PATH"
+
+# source scripts
+# allow nvm to handle .node-version
+source ~/.config/zsh/nvm_auto_switch.zsh
+
